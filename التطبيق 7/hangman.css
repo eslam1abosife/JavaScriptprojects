@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(201, 198, 198);
+  }
+  .badydiv {
+    display: flex;
+    background-color:  rgb(243, 243, 243);
+  }
+  .badydiv .hangman {
+    width: 50%;
+    height: 600px;
+    align-items: center;
+  }
+  .badydiv .hangman .floor {
+    position: absolute;
+    width: 140px;
+    height: 3px;
+    background-color: black;
+    top: 550px;
+    left: 130px;
+  }
+  .badydiv .hangman .amod {
+    position: absolute;
+    width: 3px;
+    height: 350px;
+    left: 200px;
+    top: 200px;
+    background-color: black;
+  }
+  .badydiv .hangman .alsath {
+    position: absolute;
+    width: 200px;
+    height: 3px;
+    left: 200px;
+    top: 230px;
+    background-color: black;
+  }
+  .badydiv .hangman .amod2 {
+    position: absolute;
+    width: 3px;
+    height: 40px;
+    left: 368px;
+    top:  232px;
+    background-color: black;
+
+  }
+  .badydiv .hangman .circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 3px dashed black;
+    border-radius: 50%;
+    left: 329px;
+    top:  272px;
+  }
+  .badydiv .hangman .man .hed {
+    width: 50px;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 429px;
+    left: 345px;
+    /* display: block; */
+
+  }
+  .badydiv .hangman .man.none1 .hed{
+    display: none;
+  }
+  .badydiv .hangman .man .body {
+    width: 3px;
+    height: 140px;
+    background-color: black;
+    position: absolute;
+    bottom: 290px;
+    left: 370px;
+    /* display: block; */
+
+  }
+  .badydiv .hangman .man.none2 .body{
+    display: none;
+  }
+  .badydiv .hangman .man .draa {
+    width: 3px;
+    height: 60px;
+    background-color: black;
+    position: absolute;
+    bottom: 340px;
+    left: 349px;
+    transform: rotate(-45deg);
+    /* display: block; */
+
+  }
+  .badydiv .hangman .man.none3 .draa{
+    display: none;
+  }
+  .badydiv .hangman .man .draa2 {
+    width: 3px;
+    height: 60px;
+    background-color: black;
+    position: absolute;
+    bottom: 340px;
+    left: 392px;
+    transform: rotate(45deg);
+    /* display: block; */
+
+  }
+  .badydiv .hangman .man.none4 .draa2{
+    display: none;
+  }
+  .badydiv .hangman .man .lags {
+    width: 3px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    bottom: 223px;
+    left: 341px;
+    transform: rotate(45deg);
+    /* display: none; */
+
+  }
+  .badydiv .hangman .man.none5 .lags{
+    display: none;
+  }
+  .badydiv .hangman .man {
+    position: absolute;
+    left: -332px;
+    top: 500px;
+  }
+  .badydiv .hangman .man .lags2 {
+    width: 3px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    bottom: 223px;
+    left: 398px;
+    transform: rotate(-45deg);
+    /* display: none; */
+
+  }
+  .badydiv .hangman .man.none6 .lags2{
+    display: none;
+  } 
+  .keybord{
+    flex: 1;
+    padding: 15px;
+    margin-top: 120px;
+    text-align: center;
+  }
+  .keybord.stop span{
+    pointer-events: none;
+  }
+  .keybord span{
+    width: 55px;
+    height: 55px;
+    color: white;
+    background-color: rgb(59, 59, 175);
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+    line-height: 55px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .keybord span.clicked{
+    background-color: rgb(231, 230, 228);
+    color: rgb(99, 99, 99);
+  }
+  .carcter{
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+
+}
+  .carcter span span{
+    padding: 20px;
+    background-color: rgb(231, 230, 228);
+    margin-right: 10px;
+    position: relative;
+  }
+  .carcter span span::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+.pop{
+  width: 80%;
+  /* height: 200px; */
+  background-color: blueviolet;
+  position: fixed  ;
+  padding:  100px 20px;
+  left: 10%;
+  text-align: center;
+  font-size: 40px;
+  border: 1px solid #ccc;
+  color: #fff;
+  bottom: 230px;
+}

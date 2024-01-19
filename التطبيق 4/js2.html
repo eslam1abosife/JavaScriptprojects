@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      width: 400px;
+      height: 50px;
+      /*  */
+      margin: auto;
+      padding: 20px;
+    }
+    .inputdiv {
+      width: 500px;
+      padding: 20px;
+      height: 50px;
+      background-color: rgb(209, 209, 209);
+    }
+    .inputdiv input {
+      width: 77%;
+      height: 100%;
+      border-radius: 10px;
+      border: none;
+    }
+    .inputdiv input:focus {
+      outline: none;
+      border: 2px solid #d38817;
+    }
+    .inputdiv button {
+      background-color: #d38817;
+      color: white;
+      width: 20%;
+      height: 112%;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+    }
+    .container .show-div {
+      background-color: rgb(240, 235, 235);
+      width: 500px;
+      padding: 20px;
+      /* height: 50px; */
+      margin-top: 0px;
+      color: #000;
+    }
+    .divr {
+      background-color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .divr:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .divr .star {
+      /* width: 20px;
+      height: 10px; */
+      background-color: #d38817;
+      padding: 4px;
+      border-radius: 50%;
+      color: white;
+    }
+    .viseted {
+      text-decoration: none;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="inputdiv">
+        <input type="text" placeholder="show api" />
+        <button>show api</button>
+      </div>
+      <div class="show-div"></div>
+    </div>
+    <script>
+      // let varribel
+
+      let input = document.querySelector("input");
+      let but = document.querySelector("button");
+      let divsh = document.querySelector(".show-div");
+
+      but.addEventListener("click", () => {
+        rebapi();
+      });
+      function rebapi() {
+        if (input.value == "") {
+          divsh.innerHTML = "<span>please write Github username.</span>";
+        } else {
+          fetch(`https://api.github.com/users/${input.value}/repos`)
+            .then((respos) => respos.json())
+            .then((data) => {
+              divsh.innerHTML = "";
+              //   console.log(data);
+              data.forEach((repo) => {
+                let divr = document.createElement("div");
+                let divtext = document.createTextNode(repo.name);
+                divr.setAttribute("class", "divr");
+                divr.appendChild(divtext);
+
+                let divstarandlink = document.createElement("div");
+
+                let star = document.createElement("span");
+                let startext = document.createTextNode(
+                  `stars${repo.stargazers_count}`
+                );
+                star.appendChild(startext);
+                divstarandlink.appendChild(star);
+                star.setAttribute("class", "star");
+
+                let link = document.createElement("a");
+                link.innerHTML = "viseted";
+                link.setAttribute("class", "viseted");
+                link.href = `https://api.github.com/users/${input.value}/${repo.name}`;
+                link.setAttribute("target", "_blank");
+
+                divstarandlink.appendChild(link);
+
+                divr.appendChild(divstarandlink);
+                divsh.appendChild(divr);
+              });
+            });
+        }
+      }
+    </script>
+  </body>
+</html>

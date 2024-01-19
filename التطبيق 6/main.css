@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family:  Tahoma, sans-serif;
+}
+.container{
+    width: 600px;
+    margin:10px auto;
+}
+.form{
+    background-color: rgb(226, 225, 223);
+    padding: 20px;
+}
+.input{
+    width: 80%;
+    padding: 15px;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+}
+.add{
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(243, 111, 23);
+    color: white;
+    font-size: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.tasks{
+    width: 100%;
+    background-color: rgb(226, 225, 223);
+    margin-top: 10px;
+    padding: 20px;
+}
+.tasks .task{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    justify-content: space-between;
+
+}
+.tasks .task:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.tasks .task:not(:last-child){
+    margin-bottom: 10px;
+}
+.tasks .task.done{
+    opacity: 0.6;
+}
+.tasks .task span{
+    font-weight: bold;
+    font-size: 10px;
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}

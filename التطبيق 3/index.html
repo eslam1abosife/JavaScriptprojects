@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: #333;
+      font-family: Tahoma, sans-serif;
+    }
+    p {
+      color: rgb(255 255 255 / 80%);
+      margin: 20px auto;
+      font-size: 30px;
+      width: 426px;
+      border-right: 1px solid rgb(255 255 255 / 80%);
+      white-space: nowrap;
+      animation: wrap 3s steps(30) 2s both, link 0.5s infinite;
+      overflow: hidden;
+    }
+    @keyframes wrap {
+      from {
+        width: 0;
+      }
+      to {
+        width: 426px;
+      }
+    }
+    @keyframes link {
+      from {
+        border-right-color: rgb(255 255 255 / 80%);
+      }
+      to {
+        border-right-color: transparent;
+      }
+    }
+  </style>
+  <body>
+    <p>eslam alaa abdalrahman abosife</p>
+  </body>
+</html>

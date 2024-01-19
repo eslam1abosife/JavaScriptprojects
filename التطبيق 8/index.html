@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+    }
+    div {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    div span {
+      font-weight: bold;
+      color: white;
+      font-size: 80px;
+      letter-spacing: 10px;
+    }
+    div::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background-color: white;
+      animation: move 5s linear infinite;
+      mix-blend-mode: difference;
+    }
+    @keyframes move {
+      0%,
+      100% {
+        left: 0;
+      }
+      50% {
+        left: calc(100% - 100px);
+      }
+    }
+  </style>
+  <body>
+    <div>
+      <span>LOADING</span>
+    </div>
+  </body>
+</html>

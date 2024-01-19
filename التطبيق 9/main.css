@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Arial, Tahoma;
+    background-color: #333;
+}
+.link{
+    position: relative;
+    display: block;
+   width: 160px;
+    height: 40px;
+    margin:  20px auto;
+    border: 2px solid violet;
+    color: violet;
+    line-height: 36px;
+    text-decoration: none;
+    overflow: hidden;
+    text-align: center;
+}
+
+.link::before{
+    content: attr(data-text);
+    position: absolute;
+    color: violet;
+    transition: 0.3s;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: translateX(0);
+    
+}
+.link span{
+    display: block;
+    transition: 0.3s;
+    transform: translateX(-100%);
+
+}
+.link:hover::before{
+    transform: translateX(100%);
+
+}
+.link:hover span{
+    transform: translateX(0);
+
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      width: 400px;
+      margin: 120px auto;
+    }
+    .section {
+      background-color: rgb(172, 169, 169);
+      padding: 5px 20px;
+      font-size: 20px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 20px;
+    }
+    h2 {
+      padding: 10px;
+      width: calc(100% + 100px);
+      background-color: blue;
+      position: relative;
+      left: -60px;
+      color: white;
+    }
+    h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -40px;
+      border-width: 20px;
+      border-color: rgb(6, 6, 207) rgb(6, 6, 207) transparent transparent;
+      border-style: solid;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -40px;
+      border-width: 20px;
+      border-color: rgb(6, 6, 207) transparent transparent rgb(6, 6, 207);
+      border-style: solid;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="section">
+        <h2>Product Title</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, error at.
+        Aut recusandae sit error corrupti at vero voluptatem, doloribus sequi
+        repudiandae nemo esse incidunt minima sed, omnis autem? Soluta!
+      </div>
+    </div>
+  </body>
+</html>

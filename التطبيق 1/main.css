@@ -1,0 +1,49 @@
+.div{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-width: 4px;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-color: #009688;
+    animation: rotate-right 2s linear infinite;
+}
+.div::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+    margin: auto;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    border-color: #3d4bc5;
+    animation: rotate-left 1s linear infinite;
+}
+@keyframes rotate-right {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+
+    }
+    
+}
+@keyframes rotate-left {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+
+    }
+    
+}
